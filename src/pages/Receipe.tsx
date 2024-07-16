@@ -32,8 +32,6 @@ export default function Receipe() {
     step03: "",
   });
 
-  const id = "1578278789";
-
   //Recup info API
   fetch("http://localhost:3000/Receipes", {
     method: "GET",

@@ -22,10 +22,7 @@ export default function AllReceipe() {
     step03: string;
   }
 
-  interface APIArray {
-    data: APIObject[];
-  }
-  const [receipeAll, setReceipeAll] = useState<APIArray[]>([]);
+  const [receipeAll, setReceipeAll] = useState<APIObject[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/Receipes", {
@@ -63,7 +60,7 @@ export default function AllReceipe() {
           </div>
         </section>
         <section className="researchDisplay">
-          {receipeAll.map((receipe, index: any) => (
+          {receipeAll.map((receipe, index) => (
             <article key={index}>
               <img src={receipe.img} alt={receipe.name} />
               <h2>{receipe.name}</h2>
