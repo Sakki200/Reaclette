@@ -1,0 +1,25 @@
+{
+  "Receipes": [
+    {
+      "name": "Raclette",
+      "img": "",
+      "category": "Plat",
+      "time": "1h00",
+      "people": "4",
+      "ingredients": [
+        { "ingredient": "Fromage à raclette", "quantity": "800g" },
+        { "ingredient": "Pommes de terre", "quantity": "16" },
+        { "ingredient": "Charcuterie", "quantity": "400g" },
+        { "ingredient": "Cornichons", "quantity": "1 petit bocal" },
+        { "ingredient": "Baguette", "quantity": "1" },
+        { "ingredient": "Salade", "quantity": "" },
+        { "ingredient": "Vinaigrette", "quantity": "" },
+        { "ingredient": "Sel", "quantity": "" },
+        { "ingredient": "Poivre", "quantity": "" }
+      ],
+      "step01": "Couper le fromage à raclette en tranches fines (si ce n'est pas déjà fait).Comptez environ 200 de fromage par personne.Laver les pommes de terre et les cuire avec leur peau à l'eau ou à la vapeur pendant 20 à 30 minutes, jusqu'à ce qu'elles soient tendres.Les maintenir au chaud jusqu'au moment de servir.Disposer les différentes charcuteries (jambon cuit, jambon cru, saucisson sec, coppa, etc.) sur un grand plateau.",
+      "step02": "Placer les pommes de terre cuites dans un grand plat ou un panier à pain pour qu'elles restent au chaud.Mettre le fromage à raclette tranché dans un plat.Mettre les cornichons et les oignons grelots dans des petits bols.Placer le raclette grill au centre de la table.Préparer des assiettes, des couteaux, des fourchettes et des coupelles individuelles pour chaque convive.Disposer le pain frais, les cornichons et la salade sur la table avec de la vinaigrette.",
+      "step03": "Allumer le raclette grill et le laisser chauffer pendant quelques minutes.Chaque convive place une tranche de fromage dans une coupelle et la met sous le grill jusqu'à ce qu'elle soit fondue et légèrement dorée.Pendant ce temps, ils peuvent préparer leur assiette avec des pommes de terre, de la charcuterie et crudité.Une fois le fromage fondu, le verser sur les pommes de terre et les autres ingrédients dans l'assiette.Répéter l'opération jusqu'à ce que tout le monde soit rassasié !"
+    }
+  ]
+}
