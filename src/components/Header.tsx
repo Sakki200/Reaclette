@@ -5,7 +5,9 @@ export default function Header() {
     <>
       <nav>
         <figure>
-          <img src="public/img/reaclette_logo.png" alt="" />
+          <NavLink to="/">
+            <img src="public/img/reaclette_logo.png" alt="" />
+          </NavLink>
         </figure>
         <input type="text" name="" id="" />
         <div>
