@@ -2,21 +2,6 @@ import { useState } from "react";
 import Header from "../components/Header";
 
 export default function Receipe() {
-  const [receipe, setReceipe] = useState<APIObject>({
-    id: "",
-    name: "",
-    img: "",
-    category: "",
-    time: "",
-    people: 0,
-    ingredients: [],
-    step01: "",
-    step02: "",
-    step03: "",
-  });
-
-  const id = "1578278789";
-
   //TYPAGE
   interface ingredients {
     ingredient: string;
@@ -34,7 +19,22 @@ export default function Receipe() {
     step02: string;
     step03: string;
   }
+  const [receipe, setReceipe] = useState<APIObject>({
+    id: "",
+    name: "",
+    img: "",
+    category: "",
+    time: "",
+    people: 0,
+    ingredients: [],
+    step01: "",
+    step02: "",
+    step03: "",
+  });
 
+  const id = "1578278789";
+
+  //Recup info API
   fetch("http://localhost:3000/Receipes", {
     method: "GET",
     headers: {
@@ -43,11 +43,8 @@ export default function Receipe() {
   })
     .then((response) => response.json())
     .then((receipes) => {
-      receipes.forEach((receipe: APIObject) => {
-        if (receipe.id === id) {
-          setReceipe(receipe);
-        }
-      });
+      setReceipe(receipes);
+      console.log(receipe);
     });
   return (
     <>
@@ -55,6 +52,7 @@ export default function Receipe() {
       <main>
         <h1>{receipe.name}</h1>
         <article>
+          <button className="addToFavoris"></button>
           <section className="productInfo">
             <div className="productHeader">
               <p>{receipe.category}</p>
