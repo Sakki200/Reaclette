@@ -1,12 +1,123 @@
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 
 export default function AddReceipe() {
+  //CREATION DES INPUTS POUR LES .MAP
+  const inputIngredientsRequired = Array.from({ length: 4 }).map((_, index) => (
+    <div className="ingredientsDiv" key={index}>
+      <input
+        type="text"
+        name="ingredientName"
+        id="ingredientName"
+        placeholder="Ingrédient"
+        required
+      />
+      <input
+        type="text"
+        name="ingredientQuantity"
+        id="ingredientQuantity"
+        placeholder="Quantité"
+      />
+    </div>
+  ));
+  const inputIngredientsNotRequired = Array.from({ length: 6 }).map(
+    (_, index) => (
+      <div className="ingredientsDiv" key={index}>
+        <input
+          type="text"
+          name="ingredientName"
+          id="ingredientName"
+          placeholder="Ingrédient"
+        />
+        <input
+          type="text"
+          name="ingredientQuantity"
+          id="ingredientQuantity"
+          placeholder="Quantité"
+        />
+      </div>
+    )
+  );
+
+  let idRandom = "";
+  for (let i = 0; i < 10; i++) {
+    idRandom += Math.floor(Math.random() * 10).toString();
+  }
+
+  const navigate = useNavigate();
+
+  const addNewReceipe = async (e: any) => {
+    e.preventDefault();
+
+    //RECUP INPUT
+    const receipeName = document.getElementById(
+      "receipeName"
+    ) as HTMLInputElement;
+    const receipeImg = document.getElementById(
+      "receipeImg"
+    ) as HTMLInputElement;
+    const receipeCategory = document.getElementById(
+      "receipeCategory"
+    ) as HTMLInputElement;
+    const receipeTime = document.getElementById(
+      "receipeTime"
+    ) as HTMLInputElement;
+    const receipeNbr = document.getElementById(
+      "receipeNbr"
+    ) as HTMLInputElement;
+    const receipeStep1 = document.getElementById(
+      "receipeStep1"
+    ) as HTMLInputElement;
+    const receipeStep2 = document.getElementById(
+      "receipeStep2"
+    ) as HTMLInputElement;
+    const receipeStep3 = document.getElementById(
+      "receipeStep3"
+    ) as HTMLInputElement;
+    const receipeIngredients = Array.from(
+      document.querySelectorAll(".ingredientsDiv")
+    ).map((div: any) => div);
+
+    //CREATION DE L'OBJET A POST
+    const newReceipeAddObject = {
+      id: parseInt(idRandom),
+      name: receipeName.value,
+      img: receipeImg.value,
+      category: receipeCategory.value,
+      time: receipeTime.value,
+      people: parseInt(receipeNbr.value),
+      ingredients: [
+        receipeIngredients.map((div: any) => ({
+          ingredient: div.children[0].value,
+          quantity: div.children[1].value,
+        })),
+      ],
+      step01: receipeStep1.value,
+      step02: receipeStep2.value,
+      step03: receipeStep3.value,
+    };
+
+    //METHOD POST POUR L'API
+    try {
+      await fetch("http://localhost:3000/Receipes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newReceipeAddObject),
+      });
+      navigate("/receipes/" + parseInt(idRandom));
+    } catch (error) {
+      console.log("Error : " + error);
+    }
+  };
+
   return (
     <>
       <Header />
       <main>
         <h1>AJOUTEZ VOTRE RECETTE</h1>
-        <form id="form" method="POST">
+        <form onSubmit={addNewReceipe}>
           <div className="addName">
             <h4>Nom de la recette</h4>
             <input
@@ -23,9 +134,9 @@ export default function AddReceipe() {
               placeholder="https://raclette/img.png"
               required
             />
-            <img src="public/img/receipe_name.svg" alt="Post-it" />
+            <img src="public/img/receipe_name.svg" alt="Post-it" width={100} />
           </div>
-          <div className="addInformations">
+          <div className="addInformations" id="ingredientsDiv">
             <h4>Informations</h4>
             <div>
               <label htmlFor="receipeCategory">Catégorie</label>
@@ -43,15 +154,15 @@ export default function AddReceipe() {
                 <option value="20min">20 minutes</option>
                 <option value="30min">30 minutes</option>
                 <option value="45min">45 minutes</option>
-                <option value="1h">1 heure</option>
+                <option value="1h00">1 heure</option>
                 <option value="1h30min">1 heure et 30 minutes</option>
-                <option value="2h">2 heures</option>
+                <option value="2h00">2 heures</option>
                 <option value="2h30min">2 heures et 30 minutes</option>
-                <option value="3h">3 heures</option>
-                <option value="3h">3 heures et 30 minutes</option>
-                <option value="4h">4 heures</option>
-                <option value="4h">4 heures et 30 minutes</option>
-                <option value="5h">5 heures</option>
+                <option value="3h00">3 heures</option>
+                <option value="3h30min">3 heures et 30 minutes</option>
+                <option value="4h00">4 heures</option>
+                <option value="4h30min">4 heures et 30 minutes</option>
+                <option value="5h00">5 heures</option>
               </select>
             </div>
             <div>
@@ -71,169 +182,17 @@ export default function AddReceipe() {
                 <option value="12">Pour 12 personnes</option>
               </select>
             </div>
-            <img src="public/img/receipe_info.svg" alt="Post-it" />
+            <img src="public/img/receipe_info.svg" alt="Post-it" width={100} />
           </div>
           <div className="addIngredients">
             <h4>Ingrédients</h4>
-            <div>
-              <input
-                type="text"
-                name="ingredientName"
-                id="ingredientName"
-                placeholder="Ingrédient"
-                required
-              />
-              <input
-                type="text"
-                name="ingredientQuantity"
-                id="ingredientQuantity"
-                placeholder="Quantité"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="ingredientName"
-                id="ingredientName"
-                placeholder="Ingrédient"
-                required
-              />
-              <input
-                type="text"
-                name="ingredientQuantity"
-                id="ingredientQuantity"
-                placeholder="Quantité"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="ingredientName"
-                id="ingredientName"
-                placeholder="Ingrédient"
-                required
-              />
-              <input
-                type="text"
-                name="ingredientQuantity"
-                id="ingredientQuantity"
-                placeholder="Quantité"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="ingredientName"
-                id="ingredientName"
-                placeholder="Ingrédient"
-                required
-              />
-              <input
-                type="text"
-                name="ingredientQuantity"
-                id="ingredientQuantity"
-                placeholder="Quantité"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="ingredientName"
-                id="ingredientName"
-                placeholder="Ingrédient"
-              />
-              <input
-                type="text"
-                name="ingredientQuantity"
-                id="ingredientQuantity"
-                placeholder="Quantité"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="ingredientName"
-                id="ingredientName"
-                placeholder="Ingrédient"
-              />
-              <input
-                type="text"
-                name="ingredientQuantity"
-                id="ingredientQuantity"
-                placeholder="Quantité"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="ingredientName"
-                id="ingredientName"
-                placeholder="Ingrédient"
-              />
-              <input
-                type="text"
-                name="ingredientQuantity"
-                id="ingredientQuantity"
-                placeholder="Quantité"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="ingredientName"
-                id="ingredientName"
-                placeholder="Ingrédient"
-              />
-              <input
-                type="text"
-                name="ingredientQuantity"
-                id="ingredientQuantity"
-                placeholder="Quantité"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="ingredientName"
-                id="ingredientName"
-                placeholder="Ingrédient"
-              />
-              <input
-                type="text"
-                name="ingredientQuantity"
-                id="ingredientQuantity"
-                placeholder="Quantité"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="ingredientName"
-                id="ingredientName"
-                placeholder="Ingrédient"
-              />
-              <input
-                type="text"
-                name="ingredientQuantity"
-                id="ingredientQuantity"
-                placeholder="Quantité"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="ingredientName"
-                id="ingredientName"
-                placeholder="Ingrédient"
-              />
-              <input
-                type="text"
-                name="ingredientQuantity"
-                id="ingredientQuantity"
-                placeholder="Quantité"
-              />
-            </div>
-            <img src="public/img/receipe_ingredients.svg" alt="Post-it" />
+            {inputIngredientsRequired}
+            {inputIngredientsNotRequired}
+            <img
+              src="public/img/receipe_ingredients.svg"
+              alt="Post-it"
+              width={100}
+            />
           </div>
           <div className="addStep1">
             <h4>Première étape de préparation</h4>
@@ -243,7 +202,11 @@ export default function AddReceipe() {
               placeholder="Écrivez ici la première étape de votre préparation en détail."
               required
             ></textarea>
-            <img src="public/img/receipe_etape01.svg" alt="Post-it" />
+            <img
+              src="public/img/receipe_etape01.svg"
+              alt="Post-it"
+              width={100}
+            />
           </div>
           <div className="addStep2">
             <h4>Deuxième étape de préparation</h4>
@@ -253,26 +216,32 @@ export default function AddReceipe() {
               placeholder="Écrivez ici la deuxième étape de votre préparation en détail."
               required
             ></textarea>
-            <img src="public/img/receipe_etape02.svg" alt="Post-it" />
+            <img
+              src="public/img/receipe_etape02.svg"
+              alt="Post-it"
+              width={100}
+            />
           </div>
           <div className="addStep3">
             <h4>Dernière étape de préparation</h4>
             <textarea
               name="receipeStep3"
-              id="receipeSte3"
+              id="receipeStep3"
               placeholder="Écrivez ici la dernière étape de votre préparation en détail."
               required
             ></textarea>
-            <img src="public/img/receipe_etape03.svg" alt="Post-it" />
+            <img
+              src="public/img/receipe_etape03.svg"
+              alt="Post-it"
+              width={100}
+            />
           </div>
           <div className="addConfirm">
             <p>
               Il est obligatoire de remplir tous les champs et au minimum 4
               ingrédients
             </p>
-            <button type="submit" id="submit">
-              VALIDEZ VOTRE RECETTE
-            </button>
+            <button type="submit">VALIDEZ VOTRE RECETTE</button>
           </div>
         </form>
       </main>

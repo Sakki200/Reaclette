@@ -11,7 +11,7 @@ export default function PeopleSlider() {
         min="1"
         max="12"
         value={peopleData}
-        onChange={(e) => setPeopleData(e.target.value)}
+        onChange={(e: any) => setPeopleData(e.target.value)}
       />
     </>
   );

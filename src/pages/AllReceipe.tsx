@@ -10,7 +10,7 @@ export default function AllReceipe() {
     quantity: string;
   }
   interface APIObject {
-    id: string;
+    id: number;
     name: string;
     img: string;
     category: string;
@@ -36,7 +36,6 @@ export default function AllReceipe() {
         setReceipeAll(receipes);
       });
   }, []);
-  console.log(receipeAll);
 
   return (
     <>

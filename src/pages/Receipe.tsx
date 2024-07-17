@@ -8,7 +8,7 @@ export default function Receipe() {
     quantity: string;
   }
   interface APIObject {
-    id: string;
+    id: number;
     name: string;
     img: string;
     category: string;
@@ -20,7 +20,7 @@ export default function Receipe() {
     step03: string;
   }
   const [receipe, setReceipe] = useState<APIObject>({
-    id: "",
+    id: 0,
     name: "",
     img: "",
     category: "",

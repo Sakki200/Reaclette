@@ -1,26 +1,108 @@
 {
   "Receipes": [
     {
-      "id": "1578278789",
+      "id": 1578278789,
       "name": "Raclette",
       "img": "https://media.istockphoto.com/id/495695006/fr/photo/raclette.jpg?s=612x612&w=0&k=20&c=fO2c2twoE_cotlot7W1h0pCOf0lPUDfjXLZhs5Kp3gw=",
       "category": "Plat",
       "time": "1h00",
       "people": 4,
       "ingredients": [
-        { "ingredient": "Fromage à raclette", "quantity": "800g" },
-        { "ingredient": "Pommes de terre", "quantity": "16" },
-        { "ingredient": "Charcuterie", "quantity": "400g" },
-        { "ingredient": "Cornichons", "quantity": "1 petit bocal" },
-        { "ingredient": "Baguette", "quantity": "1" },
-        { "ingredient": "Salade", "quantity": "" },
-        { "ingredient": "Vinaigrette", "quantity": "" },
-        { "ingredient": "Sel", "quantity": "" },
-        { "ingredient": "Poivre", "quantity": "" }
+        {
+          "ingredient": "Fromage à raclette",
+          "quantity": "800g"
+        },
+        {
+          "ingredient": "Pommes de terre",
+          "quantity": "16"
+        },
+        {
+          "ingredient": "Charcuterie",
+          "quantity": "400g"
+        },
+        {
+          "ingredient": "Cornichons",
+          "quantity": "1 petit bocal"
+        },
+        {
+          "ingredient": "Baguette",
+          "quantity": "1"
+        },
+        {
+          "ingredient": "Salade",
+          "quantity": ""
+        },
+        {
+          "ingredient": "Vinaigrette",
+          "quantity": ""
+        },
+        {
+          "ingredient": "Sel",
+          "quantity": ""
+        },
+        {
+          "ingredient": "Poivre",
+          "quantity": ""
+        }
       ],
       "step01": "Couper le fromage à raclette en tranches fines (si ce n'est pas déjà fait).Comptez environ 200 de fromage par personne.Laver les pommes de terre et les cuire avec leur peau à l'eau ou à la vapeur pendant 20 à 30 minutes, jusqu'à ce qu'elles soient tendres.Les maintenir au chaud jusqu'au moment de servir.Disposer les différentes charcuteries (jambon cuit, jambon cru, saucisson sec, coppa, etc.) sur un grand plateau.",
       "step02": "Placer les pommes de terre cuites dans un grand plat ou un panier à pain pour qu'elles restent au chaud.Mettre le fromage à raclette tranché dans un plat.Mettre les cornichons et les oignons grelots dans des petits bols.Placer le raclette grill au centre de la table.Préparer des assiettes, des couteaux, des fourchettes et des coupelles individuelles pour chaque convive.Disposer le pain frais, les cornichons et la salade sur la table avec de la vinaigrette.",
       "step03": "Allumer le raclette grill et le laisser chauffer pendant quelques minutes.Chaque convive place une tranche de fromage dans une coupelle et la met sous le grill jusqu'à ce qu'elle soit fondue et légèrement dorée.Pendant ce temps, ils peuvent préparer leur assiette avec des pommes de terre, de la charcuterie et crudité.Une fois le fromage fondu, le verser sur les pommes de terre et les autres ingrédients dans l'assiette.Répéter l'opération jusqu'à ce que tout le monde soit rassasié !"
+    },
+    {
+      "id": 9784238732,
+      "name": "Pot-au-feu",
+      "img": "https://www.foodandwine.com/thmb/TZVjOMfmMFA43KG_vQasBUO5dLU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Classic-pot-au-feu-FT-RECIPE0424-a22fc3081f2b42e9b7d0eca524e04f8a.jpg",
+      "category": "plat",
+      "time": "3h30min",
+      "people": 6,
+      "ingredients": [
+        [
+          {
+            "ingredient": "Viande de boeuf",
+            "quantity": "1.5kg"
+          },
+          {
+            "ingredient": "Carottes",
+            "quantity": "3"
+          },
+          {
+            "ingredient": "Poireaux",
+            "quantity": "3"
+          },
+          {
+            "ingredient": "Navets",
+            "quantity": "2"
+          },
+          {
+            "ingredient": "Branche de céleri",
+            "quantity": "1"
+          },
+          {
+            "ingredient": "Oignon",
+            "quantity": "1"
+          },
+          {
+            "ingredient": "Clous de girofle",
+            "quantity": "3"
+          },
+          {
+            "ingredient": "Bouquet garni (persil, thym, laurier)",
+            "quantity": "1"
+          },
+          {
+            "ingredient": "Eau",
+            "quantity": "3 litres"
+          },
+          {
+            "ingredient": "Poivre / Sel",
+            "quantity": ""
+          }
+        ]
+      ],
+      "step01": "Épluchez et coupez les carottes, les poireaux, les navets et le céleri en morceaux. Piquez l’oignon avec les clous de girofle. ",
+      "step02": "Dans une grande marmite, mettez la viande et couvrez-la d'eau froide. Portez à ébullition, écumez, puis ajoutez le bouquet garni, l'oignon, du sel et du poivre. Laissez cuire à feu doux pendant 2 heures.",
+      "step03": "Ajoutez les légumes préparés et continuez la cuisson pendant encore 1 heure. Rectifiez l'assaisonnement si nécessaire. Servez la viande et les légumes bien chauds, accompagnés du bouillon."
     }
   ]
 }

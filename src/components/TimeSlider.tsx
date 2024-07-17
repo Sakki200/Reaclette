@@ -21,7 +21,7 @@ export default function TimeSlider() {
         min={minValue}
         max={maxValue}
         value={timeData}
-        onChange={(e) => setTimeData(e.target.value)}
+        onChange={(e: any) => setTimeData(e.target.value)}
       />
     </div>
   );
