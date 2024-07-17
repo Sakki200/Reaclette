@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
 import TimeSlider from "../components/TimeSlider";
 import PeopleSlider from "../components/PeopleSlider";
+import Header from "../components/Header";
 
 export default function AllReceipe() {
   //TYPAGE
@@ -25,7 +25,7 @@ export default function AllReceipe() {
   const [receipeAll, setReceipeAll] = useState<APIObject[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/Receipes", {
+    fetch("http://localhost:3000/receipes", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -40,6 +40,7 @@ export default function AllReceipe() {
   return (
     <>
       <Header />
+      <img src="public/img/reaclette_logo.png" alt="" />
       <main>
         <h1>TOUTES NOS RECETTES</h1>
         <section className="researchFilter">

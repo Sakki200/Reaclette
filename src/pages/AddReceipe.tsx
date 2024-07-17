@@ -86,12 +86,11 @@ export default function AddReceipe() {
       category: receipeCategory.value,
       time: receipeTime.value,
       people: parseInt(receipeNbr.value),
-      ingredients: [
-        receipeIngredients.map((div: any) => ({
-          ingredient: div.children[0].value,
-          quantity: div.children[1].value,
-        })),
-      ],
+      ingredients: receipeIngredients.map((div: any) => ({
+        ingredient: div.children[0].value,
+        quantity: div.children[1].value,
+      })),
+
       step01: receipeStep1.value,
       step02: receipeStep2.value,
       step03: receipeStep3.value,
@@ -99,14 +98,14 @@ export default function AddReceipe() {
 
     //METHOD POST POUR L'API
     try {
-      await fetch("http://localhost:3000/Receipes", {
+      await fetch("http://localhost:3000/receipes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(newReceipeAddObject),
       });
-      navigate("/receipes/" + parseInt(idRandom));
+      navigate("/receipe/" + parseInt(idRandom));
     } catch (error) {
       console.log("Error : " + error);
     }
@@ -155,13 +154,13 @@ export default function AddReceipe() {
                 <option value="30min">30 minutes</option>
                 <option value="45min">45 minutes</option>
                 <option value="1h00">1 heure</option>
-                <option value="1h30min">1 heure et 30 minutes</option>
+                <option value="1h30">1 heure et 30 minutes</option>
                 <option value="2h00">2 heures</option>
-                <option value="2h30min">2 heures et 30 minutes</option>
+                <option value="2h30">2 heures et 30 minutes</option>
                 <option value="3h00">3 heures</option>
-                <option value="3h30min">3 heures et 30 minutes</option>
+                <option value="3h30">3 heures et 30 minutes</option>
                 <option value="4h00">4 heures</option>
-                <option value="4h30min">4 heures et 30 minutes</option>
+                <option value="4h30">4 heures et 30 minutes</option>
                 <option value="5h00">5 heures</option>
               </select>
             </div>

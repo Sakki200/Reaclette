@@ -1,10 +1,10 @@
 {
-  "Receipes": [
+  "receipes": [
     {
-      "id": 1578278789,
-      "name": "Raclette",
+      "id": "1578278789",
+      "name": "raclette",
       "img": "https://media.istockphoto.com/id/495695006/fr/photo/raclette.jpg?s=612x612&w=0&k=20&c=fO2c2twoE_cotlot7W1h0pCOf0lPUDfjXLZhs5Kp3gw=",
-      "category": "Plat",
+      "category": "plat",
       "time": "1h00",
       "people": 4,
       "ingredients": [
@@ -50,59 +50,163 @@
       "step03": "Allumer le raclette grill et le laisser chauffer pendant quelques minutes.Chaque convive place une tranche de fromage dans une coupelle et la met sous le grill jusqu'à ce qu'elle soit fondue et légèrement dorée.Pendant ce temps, ils peuvent préparer leur assiette avec des pommes de terre, de la charcuterie et crudité.Une fois le fromage fondu, le verser sur les pommes de terre et les autres ingrédients dans l'assiette.Répéter l'opération jusqu'à ce que tout le monde soit rassasié !"
     },
     {
-      "id": 9784238732,
-      "name": "Pot-au-feu",
+      "id": "9784238732",
+      "name": "pot-au-feu",
       "img": "https://www.foodandwine.com/thmb/TZVjOMfmMFA43KG_vQasBUO5dLU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Classic-pot-au-feu-FT-RECIPE0424-a22fc3081f2b42e9b7d0eca524e04f8a.jpg",
       "category": "plat",
-      "time": "3h30min",
+      "time": "3h30",
       "people": 6,
       "ingredients": [
-        [
-          {
-            "ingredient": "Viande de boeuf",
-            "quantity": "1.5kg"
-          },
-          {
-            "ingredient": "Carottes",
-            "quantity": "3"
-          },
-          {
-            "ingredient": "Poireaux",
-            "quantity": "3"
-          },
-          {
-            "ingredient": "Navets",
-            "quantity": "2"
-          },
-          {
-            "ingredient": "Branche de céleri",
-            "quantity": "1"
-          },
-          {
-            "ingredient": "Oignon",
-            "quantity": "1"
-          },
-          {
-            "ingredient": "Clous de girofle",
-            "quantity": "3"
-          },
-          {
-            "ingredient": "Bouquet garni (persil, thym, laurier)",
-            "quantity": "1"
-          },
-          {
-            "ingredient": "Eau",
-            "quantity": "3 litres"
-          },
-          {
-            "ingredient": "Poivre / Sel",
-            "quantity": ""
-          }
-        ]
+        {
+          "ingredient": "Viande de boeuf",
+          "quantity": "1.5kg"
+        },
+        {
+          "ingredient": "Carottes",
+          "quantity": "3"
+        },
+        {
+          "ingredient": "Poireaux",
+          "quantity": "3"
+        },
+        {
+          "ingredient": "Navets",
+          "quantity": "2"
+        },
+        {
+          "ingredient": "Branche de céleri",
+          "quantity": "1"
+        },
+        {
+          "ingredient": "Oignon",
+          "quantity": "1"
+        },
+        {
+          "ingredient": "Clous de girofle",
+          "quantity": "3"
+        },
+        {
+          "ingredient": "Bouquet garni (persil, thym, laurier)",
+          "quantity": "1"
+        },
+        {
+          "ingredient": "Eau",
+          "quantity": "3 litres"
+        },
+        {
+          "ingredient": "Poivre / Sel",
+          "quantity": ""
+        }
       ],
       "step01": "Épluchez et coupez les carottes, les poireaux, les navets et le céleri en morceaux. Piquez l’oignon avec les clous de girofle. ",
       "step02": "Dans une grande marmite, mettez la viande et couvrez-la d'eau froide. Portez à ébullition, écumez, puis ajoutez le bouquet garni, l'oignon, du sel et du poivre. Laissez cuire à feu doux pendant 2 heures.",
       "step03": "Ajoutez les légumes préparés et continuez la cuisson pendant encore 1 heure. Rectifiez l'assaisonnement si nécessaire. Servez la viande et les légumes bien chauds, accompagnés du bouillon."
+    },
+    {
+      "id": 5447273859,
+      "name": "Hachis Parmentier",
+      "img": "https://www.papillesetpupilles.fr/wp-content/uploads/2014/11/Hachis-Parmentier-Copyright-Liyana-Vynogradova-Shutterstock.jpg",
+      "category": "plat",
+      "time": "1h00",
+      "people": 4,
+      "ingredients": [
+        {
+          "ingredient": "Boeuf Haché",
+          "quantity": "500g"
+        },
+        {
+          "ingredient": "Pommes de terre",
+          "quantity": "1kg"
+        },
+        {
+          "ingredient": "Oignons",
+          "quantity": "2"
+        },
+        {
+          "ingredient": "Gousses d'ail",
+          "quantity": "2"
+        },
+        {
+          "ingredient": "Beurre",
+          "quantity": "50g"
+        },
+        {
+          "ingredient": "Lait",
+          "quantity": "20cl"
+        },
+        {
+          "ingredient": "Gruyère râpé",
+          "quantity": "100g"
+        },
+        {
+          "ingredient": "Sel",
+          "quantity": ""
+        },
+        {
+          "ingredient": "Poivre",
+          "quantity": ""
+        },
+        {
+          "ingredient": "",
+          "quantity": ""
+        }
+      ],
+      "step01": "Épluchez les pommes de terre et faites-les cuire dans de l'eau bouillante salée jusqu'à ce qu'elles soient tendres. Égouttez-les, puis écrasez-les en purée avec le beurre et le lait. Salez et poivrez selon votre goût. ",
+      "step02": "Pendant ce temps, épluchez et hachez finement les oignons et l'ail. Faites revenir les oignons et l'ail dans une poêle avec un peu d'huile jusqu'à ce qu'ils soient translucides. Ajoutez le bœuf haché, salez, poivrez et faites cuire jusqu'à ce que la viande soit bien dorée.",
+      "step03": "Préchauffez le four à 200°C (thermostat 6-7). Dans un plat à gratin, étalez une couche de purée de pommes de terre, ajoutez la viande hachée par-dessus, puis recouvrez avec le reste de purée. Parsemez de gruyère râpé et enfournez pendant environ 20-30 minutes jusqu'à ce que le dessus soit bien doré. Servez chaud."
+    },
+    {
+      "id": 3757620430,
+      "name": "Bœuf Bourguignon",
+      "img": "https://www.academiedugout.fr/images/69237/1200-686/08_boeuf_bourguignon_219.jpg?poix=50&poiy=50",
+      "category": "plat",
+      "time": "3h30",
+      "people": 6,
+      "ingredients": [
+        {
+          "ingredient": "Boeuf à braiser",
+          "quantity": "1,5kg"
+        },
+        {
+          "ingredient": "Lardons",
+          "quantity": "200g"
+        },
+        {
+          "ingredient": "Carottes",
+          "quantity": "3"
+        },
+        {
+          "ingredient": "Oignons",
+          "quantity": "2"
+        },
+        {
+          "ingredient": "Gousses d'ail",
+          "quantity": "1"
+        },
+        {
+          "ingredient": "Bouteille de vin rouge (Bourgogne)",
+          "quantity": "1"
+        },
+        {
+          "ingredient": "Bouillon de boeuf",
+          "quantity": "500ml"
+        },
+        {
+          "ingredient": "Farine",
+          "quantity": "2.c à soupe"
+        },
+        {
+          "ingredient": "Bouquet garni",
+          "quantity": "1"
+        },
+        {
+          "ingredient": "Champignons de Paris",
+          "quantity": "250g"
+        }
+      ],
+      "step01": "Coupez la viande en gros cubes. Épluchez et coupez les carottes en rondelles et émincez les oignons. Écrasez les gousses d'ail. Dans une cocotte, faites revenir les lardons avec un peu d'huile jusqu'à ce qu'ils soient dorés, puis réservez-les.",
+      "step02": "Dans la même cocotte, faites revenir les morceaux de bœuf dans l'huile jusqu'à ce qu'ils soient bien dorés. Saupoudrez de farine et mélangez bien. Ajoutez les oignons, l'ail, les carottes et les lardons réservés. Versez le vin rouge et le bouillon de bœuf, puis ajoutez le bouquet garni. Salez et poivrez. Portez à ébullition, puis baissez le feu et laissez mijoter à feu doux pendant environ 2h30.",
+      "step03": "Pendant ce temps, nettoyez et coupez les champignons en morceaux. Ajoutez-les dans la cocotte environ 30 minutes avant la fin de la cuisson. Rectifiez l'assaisonnement si nécessaire. Servez le bœuf bourguignon bien chaud, accompagné de pommes de terre vapeur ou de pâtes fraîches."
     }
   ]
 }

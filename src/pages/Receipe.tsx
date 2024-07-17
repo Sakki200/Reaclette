@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
 
 export default function Receipe() {
@@ -32,18 +32,27 @@ export default function Receipe() {
     step03: "",
   });
 
-  //Recup info API
-  fetch("http://localhost:3000/Receipes", {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((receipes) => {
-      setReceipe(receipes);
-      console.log(receipe);
-    });
+  function getURLForID(): string {
+    const currentURL = window.location.href;
+    return currentURL.slice(-10);
+  }
+  const id = getURLForID();
+
+  useEffect(() => {
+    //Recup info API
+    fetch(`http://localhost:3000/receipes?id=` + id, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setReceipe(data[0]);
+        console.log(receipe.ingredients);
+      });
+  }, []);
+
   return (
     <>
       <Header />
@@ -62,7 +71,8 @@ export default function Receipe() {
               <ul>
                 {receipe.ingredients.map((ingredient, index) => (
                   <li key={index}>
-                    {ingredient.ingredient} : {ingredient.quantity}
+                    {ingredient.ingredient}{" "}
+                    {ingredient.quantity ? " : " + ingredient.quantity : ""}
                   </li>
                 ))}
               </ul>
