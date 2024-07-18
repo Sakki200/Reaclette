@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
+import { useParams } from "react-router-dom";
 
 export default function Receipe() {
+  const { id } = useParams();
   //TYPAGE
   interface ingredients {
     ingredient: string;
@@ -32,13 +34,8 @@ export default function Receipe() {
     step03: "",
   });
 
-  function getURLForID(): string {
-    const currentURL = window.location.href;
-    return currentURL.slice(-10);
-  }
-  const id = getURLForID();
-
   useEffect(() => {
+    console.log(id);
     //Recup info API
     fetch(`http://localhost:3000/receipes?id=` + id, {
       method: "GET",
@@ -49,9 +46,8 @@ export default function Receipe() {
       .then((response) => response.json())
       .then((data) => {
         setReceipe(data[0]);
-        console.log(receipe.ingredients);
       });
-  }, []);
+  }, [id]);
 
   return (
     <>
