@@ -24,6 +24,7 @@ export default function AllReceipe() {
   }
 
   const [receipeAll, setReceipeAll] = useState<APIObject[]>([]);
+  const [peopleData, setPeopleData] = useState<number>(1);
 
   useEffect(() => {
     fetch("http://localhost:3000/receipes", {
@@ -38,6 +39,24 @@ export default function AllReceipe() {
       });
   }, []);
 
+  //FONCTION TRI
+  const filterByCategory = async (category: string) => {
+    const response = await fetch(
+      `http://localhost:3000/receipes?category=${category}`
+    );
+    const data = await response.json();
+    setReceipeAll(data);
+  };
+
+  const filterByPeople = async (number: number) => {
+    setPeopleData(number);
+    const response = await fetch(
+      `http://localhost:3000/receipes?people=${number}`
+    );
+    const data = await response.json();
+    setReceipeAll(data);
+  };
+
   return (
     <>
       <Header />
@@ -47,9 +66,21 @@ export default function AllReceipe() {
         <section className="researchFilter">
           <div className="categoryFilter">
             <h2>Catégorie</h2>
-            <p>Entrée</p>
-            <p>Plat</p>
-            <p>Dessert</p>
+            <button
+              id="categoryEntree"
+              onClick={() => filterByCategory("entree")}
+            >
+              Entrée
+            </button>
+            <button id="categoryPlat" onClick={() => filterByCategory("plat")}>
+              Plat
+            </button>
+            <button
+              id="categoryDessert"
+              onClick={() => filterByCategory("dessert")}
+            >
+              Dessert
+            </button>
           </div>
           <div className="TimeFilter">
             <h2>Temps de préparation</h2>
@@ -57,7 +88,14 @@ export default function AllReceipe() {
           </div>
           <div className="PeopleFilter">
             <h2>Nombre de personnes</h2>
-            <PeopleSlider />
+            <p>{peopleData} personnes</p>
+            <input
+              type="range"
+              min="1"
+              max="12"
+              value={peopleData}
+              onChange={(e: any) => filterByPeople(e.target.value)}
+            />
           </div>
         </section>
         <section className="researchDisplay">
