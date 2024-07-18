@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import TimeSlider from "../components/TimeSlider";
 import PeopleSlider from "../components/PeopleSlider";
 import Header from "../components/Header";
+import { NavLink } from "react-router-dom";
 
 export default function AllReceipe() {
   //TYPAGE
@@ -69,7 +70,10 @@ export default function AllReceipe() {
                 <p>{receipe.time}</p>
                 <p>{receipe.people}</p>
               </div>
-              <button>RECETTE</button>
+
+              <NavLink to={"/receipe/" + receipe.id}>
+                <button>RECETTE</button>
+              </NavLink>
             </article>
           ))}
         </section>

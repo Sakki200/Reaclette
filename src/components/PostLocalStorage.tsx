@@ -1,6 +1,29 @@
 export default function PostLocalStorage(id: number, name: string) {
-  const storeObject = { id: id, name: name };
-  const storeObjectStringify = JSON.stringify(storeObject);
+  let tableStoreObject: { id: number; name: string }[] = [];
 
-  localStorage.setItem("reaclette", storeObjectStringify);
+  const addElementTarget = (tableStoreObject: any) => {
+    const storeObject = { id: id, name: name };
+    tableStoreObject.push(storeObject);
+
+    const storeTableStringify = JSON.stringify(tableStoreObject);
+
+    localStorage.setItem("reaclette", storeTableStringify);
+  };
+
+  const isStorage = localStorage.getItem("reaclette");
+  if (isStorage) {
+    tableStoreObject = JSON.parse(isStorage);
+    console.log(tableStoreObject);
+
+    if (tableStoreObject.some((item: any) => item.id === id)) {
+      console.log(tableStoreObject);
+      return;
+    } else {
+      console.log(tableStoreObject);
+      addElementTarget(tableStoreObject);
+    }
+  } else {
+    console.log(tableStoreObject);
+    addElementTarget(tableStoreObject);
+  }
 }

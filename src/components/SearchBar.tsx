@@ -53,6 +53,7 @@ export default function SearchBar() {
         <NavLink id="displayResearch1" to={urlFromID1}></NavLink>
         <NavLink id="displayResearch2" to={urlFromID2}></NavLink>
         <NavLink id="displayResearch3" to={urlFromID3}></NavLink>
+        
       </div>
     </>
   );
