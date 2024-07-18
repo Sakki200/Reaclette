@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
+import PostLocalStorage from "../components/PostLocalStorage";
+import DeleteLocalStorage from "../components/DeleteLocalStorage";
 
 export default function Receipe() {
   const { id } = useParams();
@@ -49,13 +51,30 @@ export default function Receipe() {
       });
   }, [id]);
 
+  const LocalStorage = () => {
+    const favButton = document.getElementById(
+      "favCheckBox"
+    ) as HTMLInputElement;
+
+    if (favButton.checked) {
+      PostLocalStorage(receipe.id, receipe.name);
+    } else {
+      DeleteLocalStorage(receipe.id);
+    }
+  };
+
   return (
     <>
       <Header />
       <main>
         <h1>{receipe.name}</h1>
         <article>
-          <button className="addToFavoris"></button>
+          <input
+            type="checkbox"
+            id="favCheckBox"
+            className="addToFavoris"
+            onClick={LocalStorage}
+          ></input>
           <section className="productInfo">
             <div className="productHeader">
               <p>{receipe.category}</p>
