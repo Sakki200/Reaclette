@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import TimeSlider from "../components/TimeSlider";
-import PeopleSlider from "../components/PeopleSlider";
 import Header from "../components/Header";
 import { NavLink } from "react-router-dom";
 
