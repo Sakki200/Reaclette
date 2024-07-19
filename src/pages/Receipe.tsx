@@ -7,10 +7,6 @@ import FavOn from "../../public/img/fav_on.png";
 import FavOff from "../../public/img/fav_off.png";
 export default function Receipe() {
   const { id } = useParams();
-  const favButton = document.getElementById(
-    "favCheckBox" + id
-  ) as HTMLInputElement;
-  const favIcon = document.getElementById("favIcon" + id) as HTMLInputElement;
 
   //TYPAGE
   interface ingredients {
@@ -57,6 +53,10 @@ export default function Receipe() {
   }, [id]);
 
   const LocalStorage = () => {
+    const favButton = document.getElementById(
+      "favCheckBox" + id
+    ) as HTMLInputElement;
+    const favIcon = document.getElementById("favIcon" + id) as HTMLInputElement;
     favButton.checked = !favButton.checked;
 
     if (favButton.checked) {
@@ -69,6 +69,10 @@ export default function Receipe() {
   };
 
   const lauchFavorite = async () => {
+    const favButton = document.getElementById(
+      "favCheckBox" + id
+    ) as HTMLInputElement;
+    const favIcon = document.getElementById("favIcon" + id) as HTMLInputElement;
     const getItem = localStorage.getItem("reaclette");
     const allFavorites: { id: number; name: string }[] = getItem
       ? JSON.parse(getItem)
