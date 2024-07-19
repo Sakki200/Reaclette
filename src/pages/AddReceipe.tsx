@@ -114,7 +114,7 @@ export default function AddReceipe() {
   return (
     <>
       <Header />
-      <main>
+      <main className="addReceipe">
         <h1>AJOUTEZ VOTRE RECETTE</h1>
         <form onSubmit={addNewReceipe}>
           <div className="addName">

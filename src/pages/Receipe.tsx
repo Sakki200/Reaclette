@@ -66,7 +66,7 @@ export default function Receipe() {
   return (
     <>
       <Header />
-      <main>
+      <main className="receipe">
         <h1>
           {receipe.name
             .replace(/_/g, " ")

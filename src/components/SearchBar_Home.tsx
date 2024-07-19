@@ -33,12 +33,15 @@ export default function SearchBarHome() {
     console.log("object");
     try {
       resetText();
-      const response = await fetch(`https://reaclette-api.vercel.app/receipes`, {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://reaclette-api.vercel.app/receipes`,
+        {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
 
       const data = await response.json();
       console.log(data);
@@ -83,11 +86,12 @@ export default function SearchBarHome() {
   }, [searchValue]);
 
   return (
-    <>
+    <div className="searchBarHome">
       <input
         type="text"
         name=""
         id="searchBar"
+        placeholder="Raclette, Tarte aux fraises, Omelette, Fondant au chocolat ..."
         onChange={(e) => setSearchValue(e.target.value)}
       />
       <div>
@@ -95,6 +99,6 @@ export default function SearchBarHome() {
         <NavLink id="displayResearch2Home" to={urlFromID2}></NavLink>
         <NavLink id="displayResearch3Home" to={urlFromID3}></NavLink>
       </div>
-    </>
+    </div>
   );
 }

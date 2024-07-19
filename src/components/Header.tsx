@@ -13,7 +13,7 @@ export default function Header() {
             </NavLink>
           </figure>
           <SearchBar />
-          <div>
+          <div className="buttonGoTo">
             <button>
               <NavLink to="/add">AJOUTEZ VOTRE RECETTE</NavLink>
             </button>

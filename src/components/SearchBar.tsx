@@ -33,12 +33,15 @@ export default function SearchBar() {
     console.log("object");
     try {
       resetText();
-      const response = await fetch(`https://reaclette-api.vercel.app/receipes`, {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://reaclette-api.vercel.app/receipes`,
+        {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
 
       const data = await response.json();
       console.log(data);
@@ -84,16 +87,19 @@ export default function SearchBar() {
 
   return (
     <>
-      <input
-        type="text"
-        name=""
-        id="searchBar"
-        onChange={(e) => setSearchValue(e.target.value)}
-      />
-      <div>
-        <NavLink id="displayResearch1" to={urlFromID1}></NavLink>
-        <NavLink id="displayResearch2" to={urlFromID2}></NavLink>
-        <NavLink id="displayResearch3" to={urlFromID3}></NavLink>
+      <div className="searchBarHeader">
+        <input
+          type="text"
+          name=""
+          id="searchBar"
+          placeholder="Raclette, Tarte aux fraises, Omelette, Fondant au chocolat ..."
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+        <div>
+          <NavLink id="displayResearch1" to={urlFromID1}></NavLink>
+          <NavLink id="displayResearch2" to={urlFromID2}></NavLink>
+          <NavLink id="displayResearch3" to={urlFromID3}></NavLink>
+        </div>
       </div>
     </>
   );

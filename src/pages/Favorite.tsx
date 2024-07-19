@@ -23,7 +23,7 @@ export default function Favorite() {
   return (
     <>
       <Header />
-      <main>
+      <main className="showFavorites">
         <h1>VOS FAVORIS</h1>
         {allFavorites.map((favorite: { id: number; name: string }) => (
           <div key={favorite.id}>

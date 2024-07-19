@@ -60,7 +60,7 @@ export default function AllReceipe() {
     <>
       <Header />
       <img src="public/img/reaclette_logo.png" alt="" />
-      <main>
+      <main className="allReceipes">
         <h1>TOUTES NOS RECETTES</h1>
         <section className="researchFilter">
           <div className="categoryFilter">
