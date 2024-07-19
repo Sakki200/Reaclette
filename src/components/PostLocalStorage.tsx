@@ -13,17 +13,13 @@ export default function PostLocalStorage(id: number, name: string) {
   const isStorage = localStorage.getItem("reaclette");
   if (isStorage) {
     tableStoreObject = JSON.parse(isStorage);
-    console.log(tableStoreObject);
 
     if (tableStoreObject.some((item: any) => item.id === id)) {
-      console.log(tableStoreObject);
       return;
     } else {
-      console.log(tableStoreObject);
       addElementTarget(tableStoreObject);
     }
   } else {
-    console.log(tableStoreObject);
     addElementTarget(tableStoreObject);
   }
 }

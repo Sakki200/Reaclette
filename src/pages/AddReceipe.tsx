@@ -81,7 +81,7 @@ export default function AddReceipe() {
     //CREATION DE L'OBJET A POST
     const newReceipeAddObject = {
       id: parseInt(idRandom),
-      name: receipeName.value,
+      name: receipeName.value.toLowerCase().replace(/\s/g, "_"),
       img: receipeImg.value,
       category: receipeCategory.value,
       time: receipeTime.value,
@@ -110,7 +110,6 @@ export default function AddReceipe() {
       console.log("Error : " + error);
     }
   };
-
 
   return (
     <>

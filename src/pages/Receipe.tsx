@@ -67,7 +67,11 @@ export default function Receipe() {
     <>
       <Header />
       <main>
-        <h1>{receipe.name}</h1>
+        <h1>
+          {receipe.name
+            .replace(/_/g, " ")
+            .replace(/\b\w/g, (char) => char.toUpperCase())}
+        </h1>
         <article>
           <input
             type="checkbox"
