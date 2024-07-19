@@ -6,7 +6,10 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <img src="public/img/reaclette_home_logo.png" alt="Logo Reaclette v2" />
+        <img
+          src="../../public/img/reaclette_home_logo.png"
+          alt="Logo Reaclette v2"
+        />
         <h1>TROUVE LA RECETTE DE TON PLAT FAVORIS</h1>
         <SearchBarHome />
       </main>
