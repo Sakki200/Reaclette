@@ -1,6 +1,10 @@
 {
-    "routes": [
-      { "handle": "filesystem" },
-      { "src": "/.*", "dest": "/index.html" }
-    ]
-  } 
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/", "dest": "/" },
+    { "src": "/add", "dest": "/" },
+    { "src": "/receipe/all", "dest": "/" },
+    { "src": "/fav", "dest": "/" },
+    { "src": "/receipe/*", "dest": "/" }
+  ]
+}
