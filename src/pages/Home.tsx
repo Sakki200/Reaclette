@@ -1,5 +1,4 @@
 import Header from "../components/Header";
-import SearchBar from "../components/SearchBar";
 import SearchBarHome from "../components/SearchBar_Home";
 
 export default function Home() {
