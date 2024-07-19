@@ -30,7 +30,6 @@ export default function SearchBar() {
   };
 
   const getAPISearch = async () => {
-    console.log("object");
     try {
       resetText();
       const response = await fetch(
@@ -44,12 +43,10 @@ export default function SearchBar() {
       );
 
       const data = await response.json();
-      console.log(data);
 
       const textLowerCase = searchValue.toLowerCase();
 
       const filteredData = data.filter((item: any) => {
-        console.log(item);
         return item.name.toLowerCase().includes(textLowerCase);
       });
 
