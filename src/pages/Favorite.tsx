@@ -4,7 +4,6 @@ import PostLocalStorage from "../components/PostLocalStorage";
 import { NavLink } from "react-router-dom";
 import FavOn from "../../public/img/fav_on.png";
 import FavOff from "../../public/img/fav_off.png";
-import { useState } from "react";
 export default function Favorite() {
   const getItem = localStorage.getItem("reaclette");
   const allFavorites: { id: number; name: string }[] = getItem

@@ -10,7 +10,6 @@ export default function DeleteLocalStorage(id: number) {
   const isStorage = localStorage.getItem("reaclette");
   if (isStorage) {
     tableStoreObject = JSON.parse(isStorage);
-    console.log(tableStoreObject);
 
     if (tableStoreObject.some((item: any) => item.id === id)) {
       tableStoreObject = tableStoreObject.filter((item: any) => item.id !== id);

@@ -3,7 +3,8 @@ import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import PostLocalStorage from "../components/PostLocalStorage";
 import DeleteLocalStorage from "../components/DeleteLocalStorage";
-
+import FavOn from "../../public/img/fav_on.png";
+import FavOff from "../../public/img/fav_off.png";
 export default function Receipe() {
   const { id } = useParams();
   //TYPAGE
@@ -37,7 +38,6 @@ export default function Receipe() {
   });
 
   useEffect(() => {
-    console.log(id);
     //Recup info API
     fetch(`https://reaclette-api.vercel.app/receipes?id=` + id, {
       method: "GET",
@@ -53,14 +53,23 @@ export default function Receipe() {
 
   const LocalStorage = () => {
     const favButton = document.getElementById(
-      "favCheckBox"
+      "favCheckBox" + id
     ) as HTMLInputElement;
+    const favIcon = document.getElementById("favIcon" + id) as HTMLInputElement;
+
+    favButton.checked = !favButton.checked;
 
     if (favButton.checked) {
       PostLocalStorage(receipe.id, receipe.name);
+      favIcon.src = FavOn;
     } else {
       DeleteLocalStorage(receipe.id);
+      favIcon.src = FavOff;
     }
+  };
+
+  const stepsInnerHTML = (text: string) => {
+    return { __html: text.replace(/\./g, ".<br>") };
   };
 
   return (
@@ -73,17 +82,29 @@ export default function Receipe() {
             .replace(/\b\w/g, (char) => char.toUpperCase())}
         </h1>
         <article>
-          <input
-            type="checkbox"
-            id="favCheckBox"
-            className="addToFavoris"
-            onClick={LocalStorage}
-          ></input>
           <section className="productInfo">
             <div className="productHeader">
-              <p>{receipe.category}</p>
-              <p>{receipe.time}</p>
-              <p>{receipe.people}P</p>
+              <img
+                id={"favIcon" + receipe.id}
+                className="favIcon"
+                src={FavOn}
+                alt="Logo favoris"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  LocalStorage();
+                }}
+              />
+              <input
+                type="checkbox"
+                id={"favCheckBox" + receipe.id}
+                className="addToFavoris"
+              ></input>
+              <div>
+                <p>{receipe.category}</p>
+                <p>{receipe.time}</p>
+                <p>{receipe.people}P</p>
+              </div>
             </div>
             <div className="productIngredients">
               <h3>INGRÉDIENTS</h3>
@@ -105,15 +126,15 @@ export default function Receipe() {
           <section className="productSteps">
             <article>
               <h2>ÉTAPE N°1</h2>
-              <p>{receipe.step01}</p>
+              <p dangerouslySetInnerHTML={stepsInnerHTML(receipe.step01)}></p>
             </article>
             <article>
               <h2>ÉTAPE N°2</h2>
-              <p>{receipe.step02}</p>
+              <p dangerouslySetInnerHTML={stepsInnerHTML(receipe.step02)}></p>
             </article>
             <article>
               <h2>ÉTAPE N°3</h2>
-              <p>{receipe.step03}</p>
+              <p dangerouslySetInnerHTML={stepsInnerHTML(receipe.step03)}></p>
             </article>
           </section>
         </article>

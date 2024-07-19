@@ -61,7 +61,6 @@ export default function AllReceipe() {
       <Header />
       <img src="public/img/reaclette_logo.png" alt="" />
       <main className="allReceipes">
-        <h1>TOUTES NOS RECETTES</h1>
         <section className="researchFilter">
           <div className="categoryFilter">
             <h2>Catégorie</h2>
@@ -98,21 +97,24 @@ export default function AllReceipe() {
           </div>
         </section>
         <section className="researchDisplay">
-          {receipeAll.map((receipe, index) => (
-            <article key={index}>
-              <img src={receipe.img} alt={receipe.name} />
-              <h2>{receipe.name}</h2>
-              <div>
-                <p>{receipe.category}</p>
-                <p>{receipe.time}</p>
-                <p>{receipe.people}</p>
-              </div>
+          <h1>TOUTES NOS RECETTES</h1>
+          <div className="allArticles">
+            {receipeAll.map((receipe, index) => (
+              <article key={index}>
+                <img src={receipe.img} alt={receipe.name} />
+                <h2>{receipe.name.toUpperCase().replace(/_/g, " ")}</h2>
+                <div>
+                  <p>{receipe.category}</p>
+                  <p>{receipe.time}</p>
+                  <p>{receipe.people}</p>
+                </div>
 
-              <NavLink to={"/receipe/" + receipe.id}>
-                <button>RECETTE</button>
-              </NavLink>
-            </article>
-          ))}
+                <NavLink to={"/receipe/" + receipe.id}>
+                  <button>RECETTE</button>
+                </NavLink>
+              </article>
+            ))}
+          </div>
         </section>
       </main>
     </>

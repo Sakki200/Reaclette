@@ -2,8 +2,10 @@
 
 :root {
   --color-bg: #ffecaa;
+  --color-text-bright: #fff2c4;
   --color-bg-header: #50402c;
   --color-fake-button: #161111;
+  --color-button-01: #f0d36b;
 }
 
 * {
@@ -47,7 +49,7 @@ body {
         margin-left: auto;
         & button {
           border: none;
-          border-radius: 0.4rem;
+          border-radius: 0.8rem;
           font-size: 2.4rem;
           padding: 0.6rem 1.6rem;
           margin-right: 4.8rem;
@@ -128,6 +130,256 @@ body {
           }
           & .addToFavoris {
             display: none;
+          }
+        }
+      }
+    }
+  }
+  & .receipe {
+    margin: 0 24rem;
+    margin: auto;
+    width: 144rem;
+    display: flex;
+    flex-direction: column;
+    & h1 {
+      font-weight: 200;
+      width: max-content;
+      border-radius: 0.8rem;
+      padding: 0.4rem 2.4rem;
+      margin: 2.4rem 0;
+      background-color: var(--color-fake-button);
+    }
+    & article {
+      border-radius: 0.4rem;
+      position: relative;
+      display: grid;
+      grid-template-areas:
+        "a b"
+        "c c ";
+      grid-template-columns: repeat(2, 1fr);
+      background-color: var(--color-bg-header);
+
+      & .productInfo {
+        grid-area: a;
+        & .productHeader {
+          & .favIcon {
+            position: absolute;
+            left: 2.4rem;
+            cursor: pointer;
+            height: 5.8rem;
+            &:hover {
+              filter: brightness(1.2);
+            }
+          }
+          & .addToFavoris {
+            display: none;
+          }
+          & div {
+            display: flex;
+            padding-top: 2.4rem;
+            justify-content: center;
+            & p {
+              color: var(--color-text-bright);
+              font-size: 3.2rem;
+              padding: 0 1.2rem;
+              text-decoration: underline;
+            }
+          }
+        }
+        & .productIngredients {
+          margin-top: 5.2rem;
+          & h3 {
+            font-weight: 200;
+            width: max-content;
+            border-radius: 0.8rem;
+            background-color: var(--color-fake-button);
+            margin-left: 4.8rem;
+            padding: 0.4rem 2.4rem;
+          }
+          & ul {
+            margin-top: 2.4rem;
+            margin-left: 2.4rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            & li {
+              margin-bottom: 2.4rem;
+            }
+            & li::before {
+              padding-right: 0.4rem;
+              content: "•";
+              font-size: 2rem;
+              color: var(--color-text-bright);
+            }
+          }
+        }
+      }
+      & .productImg {
+        grid-area: b;
+        margin-top: 2.4rem;
+        margin-right: 2.4rem;
+        display: flex;
+        justify-content: flex-end;
+
+        & img {
+          max-width: 64rem;
+          max-height: 40rem;
+          border-radius: 0.8rem;
+        }
+      }
+      & .productSteps {
+        grid-area: c;
+        display: flex;
+        padding: 0 4.8rem;
+        margin-top: 2.4rem;
+        margin-bottom: 8rem;
+        & article {
+          padding: 0 1.2rem;
+          display: flex;
+          flex-direction: column;
+          & h2 {
+            width: max-content;
+            font-weight: 200;
+            border-radius: 0.8rem;
+            background-color: var(--color-fake-button);
+            padding: 0.5rem 2.4rem;
+          }
+          & p {
+            line-height: 2.4rem;
+            padding-top: 2.4rem;
+          }
+        }
+      }
+    }
+  }
+  & .allReceipes {
+    display: flex;
+    & .researchFilter {
+      height: max-content;
+      border-radius: 1.6rem;
+      margin: 18rem 16rem 0 16rem;
+      padding: 2.4rem 1.2rem;
+      background-color: var(--color-bg-header);
+      & .categoryFilter {
+        width: 39rem;
+        display: flex;
+        flex-direction: column;
+        & h2 {
+          width: max-content;
+          margin: auto;
+          margin-bottom: 2.4rem;
+          border-radius: 0.8rem;
+          background-color: var(--color-fake-button);
+          padding: 0.5rem 2.4rem;
+        }
+        & button {
+          margin: auto;
+          margin-bottom: 1.6rem;
+          width: max-content;
+          font-size: 2.4rem;
+          background-color: transparent;
+          background-repeat: no-repeat;
+          border: none;
+          cursor: pointer;
+          overflow: hidden;
+          outline: none;
+        }
+      }
+      & .TimeFilter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & h2 {
+          width: max-content;
+          margin: auto;
+          margin-bottom: 2.4rem;
+          border-radius: 0.8rem;
+          background-color: var(--color-fake-button);
+          padding: 0.5rem 2.4rem;
+        }
+        & p {
+          text-align: center;
+          padding-bottom: 0.8rem;
+        }
+        & input {
+          width: 30rem;
+          margin-bottom: 1.6rem;
+        }
+      }
+      & .PeopleFilter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & h2 {
+          width: max-content;
+          margin: auto;
+          margin-bottom: 2.4rem;
+          border-radius: 0.8rem;
+          background-color: var(--color-fake-button);
+          padding: 0.5rem 2.4rem;
+        }
+        & p {
+          text-align: center;
+          padding-bottom: 0.8rem;
+        }
+        & input {
+          width: 30rem;
+          margin-bottom: 1.6rem;
+        }
+      }
+    }
+    & .researchDisplay {
+      & h1 {
+        width: max-content;
+        border-radius: 0.8rem;
+        margin-top: 4.8rem;
+        margin-bottom: 8rem;
+        background-color: var(--color-fake-button);
+        padding: 0 2.4rem;
+      }
+      & .allArticles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4.8rem;
+        & article {
+          border-radius: 1.6rem;
+          background-color: var(--color-bg-header);
+          width: 32rem;
+        }
+
+        & img {
+          border-radius: 1.6rem 1.6rem 0 0;
+        }
+        & h2 {
+          text-align: center;
+          padding: 1.2rem 0;
+        }
+        & div {
+          display: flex;
+          justify-content: center;
+          & p {
+            text-decoration: underline;
+            color: var(--color-text-bright);
+            font-size: 2.4rem;
+            padding: 0 1.2rem;
+          }
+        }
+        & a {
+          display: block;
+          margin: 1.6rem 0;
+          & button {
+            cursor: pointer;
+            border-radius: 0.8rem;
+            margin: auto;
+            font-size: 2.6rem;
+            padding: 0.6rem 2.4rem;
+            background-color: var(--color-button-01);
+            border: none;
+            outline: none;
+            display: block;
+            &:hover {
+              color: var(--color-bg-header);
+              background-color: var(--color-text-bright);
+            }
           }
         }
       }
