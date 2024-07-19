@@ -222,7 +222,10 @@ export default function AddReceipe() {
           </div>
           <div className="addStep3">
             <div>
-              <h4>Dernière étape de <br/>préparation</h4>
+              <h4>
+                Troisième étape de <br />
+                préparation
+              </h4>
               <textarea
                 name="receipeStep3"
                 id="receipeStep3"
