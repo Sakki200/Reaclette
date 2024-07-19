@@ -24,10 +24,9 @@ export default function AllReceipe() {
 
   const [receipeAll, setReceipeAll] = useState<APIObject[]>([]);
   const [peopleData, setPeopleData] = useState<number>(1);
-  const port = import.meta.env.API_PORT;
 
   useEffect(() => {
-    fetch(port + "/receipes", {
+    fetch("https://reaclette-api.vercel.app/receipes", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -41,14 +40,18 @@ export default function AllReceipe() {
 
   //FONCTION TRI
   const filterByCategory = async (category: string) => {
-    const response = await fetch(`${port}/receipes?category=${category}`);
+    const response = await fetch(
+      `https://reaclette-api.vercel.app/receipes?category=${category}`
+    );
     const data = await response.json();
     setReceipeAll(data);
   };
 
   const filterByPeople = async (number: number) => {
     setPeopleData(number);
-    const response = await fetch(`${port}/receipes?people=${number}`);
+    const response = await fetch(
+      `https://reaclette-api.vercel.app/receipes?people=${number}`
+    );
     const data = await response.json();
     setReceipeAll(data);
   };

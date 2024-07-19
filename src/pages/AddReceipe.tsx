@@ -98,7 +98,7 @@ export default function AddReceipe() {
 
     //METHOD POST POUR L'API
     try {
-      await fetch("http://localhost:3000/receipes", {
+      await fetch("https://reaclette-api.vercel.app/receipes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

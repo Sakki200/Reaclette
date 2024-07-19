@@ -39,7 +39,7 @@ export default function Receipe() {
   useEffect(() => {
     console.log(id);
     //Recup info API
-    fetch(`http://localhost:3000/receipes?id=` + id, {
+    fetch(`https://reaclette-api.vercel.app/receipes?id=` + id, {
       method: "GET",
       headers: {
         Accept: "application/json",

@@ -33,7 +33,7 @@ export default function SearchBarHome() {
     console.log("object");
     try {
       resetText();
-      const response = await fetch(`http://localhost:3000/receipes`, {
+      const response = await fetch(`https://reaclette-api.vercel.app/receipes`, {
         method: "GET",
         headers: {
           Accept: "application/json",
