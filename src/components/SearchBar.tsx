@@ -78,9 +78,12 @@ export default function SearchBar() {
     }
   };
   useEffect(() => {
+    const toggleNone = document.querySelector("#searchBarHeaderToggle");
     if (searchValue) {
+      toggleNone?.classList.remove("displayNone");
       getAPISearch();
     } else {
+      toggleNone?.classList.add("displayNone");
       resetText();
     }
   }, [searchValue]);
@@ -95,7 +98,7 @@ export default function SearchBar() {
           placeholder="Raclette, Tarte aux fraises, Omelette, Fondant au chocolat ..."
           onChange={(e) => setSearchValue(e.target.value)}
         />
-        <div>
+        <div id="searchBarHeaderToggle" className="displayNone">
           <NavLink id="displayResearch1" to={urlFromID1}></NavLink>
           <NavLink id="displayResearch2" to={urlFromID2}></NavLink>
           <NavLink id="displayResearch3" to={urlFromID3}></NavLink>

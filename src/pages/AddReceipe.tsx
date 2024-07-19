@@ -7,6 +7,7 @@ export default function AddReceipe() {
     <div className="ingredientsDiv" key={index}>
       <input
         type="text"
+        className="ingredientName"
         name="ingredientName"
         id="ingredientName"
         placeholder="Ingrédient"
@@ -14,23 +15,26 @@ export default function AddReceipe() {
       />
       <input
         type="text"
+        className="ingredientQuantity"
         name="ingredientQuantity"
         id="ingredientQuantity"
         placeholder="Quantité"
       />
     </div>
   ));
-  const inputIngredientsNotRequired = Array.from({ length: 6 }).map(
+  const inputIngredientsNotRequired = Array.from({ length: 18 }).map(
     (_, index) => (
       <div className="ingredientsDiv" key={index}>
         <input
           type="text"
+          className="ingredientName"
           name="ingredientName"
           id="ingredientName"
           placeholder="Ingrédient"
         />
         <input
           type="text"
+          className="ingredientQuantity"
           name="ingredientQuantity"
           id="ingredientQuantity"
           placeholder="Quantité"
@@ -118,122 +122,114 @@ export default function AddReceipe() {
         <h1>AJOUTEZ VOTRE RECETTE</h1>
         <form onSubmit={addNewReceipe}>
           <div className="addName">
-            <h4>Nom de la recette</h4>
-            <input
-              type="text"
-              name="receipeName"
-              id="receipeName"
-              placeholder="Raclette"
-              required
-            />
-            <input
-              type="url"
-              name="receipeImg"
-              id="receipeImg"
-              placeholder="https://raclette/img.png"
-              required
-            />
-            <img src="public/img/receipe_name.svg" alt="Post-it" width={100} />
+            <div>
+              <h4>Nom de la recette</h4>
+              <input
+                type="text"
+                name="receipeName"
+                id="receipeName"
+                placeholder="Raclette"
+                required
+              />
+              <h4>Image de votre plat</h4>
+              <input
+                type="url"
+                name="receipeImg"
+                id="receipeImg"
+                placeholder="https://img.png"
+                required
+              />
+            </div>
           </div>
           <div className="addInformations" id="ingredientsDiv">
-            <h4>Informations</h4>
             <div>
-              <label htmlFor="receipeCategory">Catégorie</label>
-              <select name="receipeCategory" id="receipeCategory" required>
-                <option value="entree">Entrée</option>
-                <option value="plat">Plat</option>
-                <option value="dessert">Dessert</option>
-              </select>
+              <h4>Informations</h4>
+              <div>
+                <label htmlFor="receipeCategory">Catégorie</label>
+                <select name="receipeCategory" id="receipeCategory" required>
+                  <option value="entree">Entrée</option>
+                  <option value="plat">Plat</option>
+                  <option value="dessert">Dessert</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="receipeTime">Temps de préparation</label>
+                <select name="receipeTime" id="receipeTime" required>
+                  <option value="5min">5 minutes</option>
+                  <option value="10min">10 minutes</option>
+                  <option value="20min">20 minutes</option>
+                  <option value="30min">30 minutes</option>
+                  <option value="45min">45 minutes</option>
+                  <option value="1h00">1 heure</option>
+                  <option value="1h30">1 heure et 30 minutes</option>
+                  <option value="2h00">2 heures</option>
+                  <option value="2h30">2 heures et 30 minutes</option>
+                  <option value="3h00">3 heures</option>
+                  <option value="3h30">3 heures et 30 minutes</option>
+                  <option value="4h00">4 heures</option>
+                  <option value="4h30">4 heures et 30 minutes</option>
+                  <option value="5h00">5 heures</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="receipeNbr">Nombre de personnes</label>
+                <select name="receipeNbr" id="receipeNbr" required>
+                  <option value="1">Pour 1 personne</option>
+                  <option value="2">Pour 2 personnes</option>
+                  <option value="3">Pour 3 personnes</option>
+                  <option value="4">Pour 4 personnes</option>
+                  <option value="5">Pour 5 personnes</option>
+                  <option value="6">Pour 6 personnes</option>
+                  <option value="7">Pour 7 personnes</option>
+                  <option value="8">Pour 8 personnes</option>
+                  <option value="9">Pour 9 personnes</option>
+                  <option value="10">Pour 10 personnes</option>
+                  <option value="11">Pour 11 personnes</option>
+                  <option value="12">Pour 12 personnes</option>
+                </select>
+              </div>
             </div>
-            <div>
-              <label htmlFor="receipeTime">Temps de préparation</label>
-              <select name="receipeTime" id="receipeTime" required>
-                <option value="5min">5 minutes</option>
-                <option value="10min">10 minutes</option>
-                <option value="20min">20 minutes</option>
-                <option value="30min">30 minutes</option>
-                <option value="45min">45 minutes</option>
-                <option value="1h00">1 heure</option>
-                <option value="1h30">1 heure et 30 minutes</option>
-                <option value="2h00">2 heures</option>
-                <option value="2h30">2 heures et 30 minutes</option>
-                <option value="3h00">3 heures</option>
-                <option value="3h30">3 heures et 30 minutes</option>
-                <option value="4h00">4 heures</option>
-                <option value="4h30">4 heures et 30 minutes</option>
-                <option value="5h00">5 heures</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="receipeNbr">Nombre de personnes</label>
-              <select name="receipeNbr" id="receipeNbr" required>
-                <option value="1">Pour 1 personne</option>
-                <option value="2">Pour 2 personnes</option>
-                <option value="3">Pour 3 personnes</option>
-                <option value="4">Pour 4 personnes</option>
-                <option value="5">Pour 5 personnes</option>
-                <option value="6">Pour 6 personnes</option>
-                <option value="7">Pour 7 personnes</option>
-                <option value="8">Pour 8 personnes</option>
-                <option value="9">Pour 9 personnes</option>
-                <option value="10">Pour 10 personnes</option>
-                <option value="11">Pour 11 personnes</option>
-                <option value="12">Pour 12 personnes</option>
-              </select>
-            </div>
-            <img src="public/img/receipe_info.svg" alt="Post-it" width={100} />
           </div>
           <div className="addIngredients">
             <h4>Ingrédients</h4>
-            {inputIngredientsRequired}
-            {inputIngredientsNotRequired}
-            <img
-              src="public/img/receipe_ingredients.svg"
-              alt="Post-it"
-              width={100}
-            />
+            <div className="divForGrid">
+              {inputIngredientsRequired}
+              {inputIngredientsNotRequired}
+            </div>
           </div>
+
           <div className="addStep1">
-            <h4>Première étape de préparation</h4>
-            <textarea
-              name="receipeStep1"
-              id="receipeStep1"
-              placeholder="Écrivez ici la première étape de votre préparation en détail."
-              required
-            ></textarea>
-            <img
-              src="public/img/receipe_etape01.svg"
-              alt="Post-it"
-              width={100}
-            />
+            <div>
+              <h4>Première étape de préparation</h4>
+              <textarea
+                name="receipeStep1"
+                id="receipeStep1"
+                placeholder="Écrivez ici la première étape de votre préparation en détail."
+                required
+              ></textarea>
+            </div>
           </div>
           <div className="addStep2">
-            <h4>Deuxième étape de préparation</h4>
-            <textarea
-              name="receipeStep2"
-              id="receipeStep2"
-              placeholder="Écrivez ici la deuxième étape de votre préparation en détail."
-              required
-            ></textarea>
-            <img
-              src="public/img/receipe_etape02.svg"
-              alt="Post-it"
-              width={100}
-            />
+            <div>
+              <h4>Deuxième étape de préparation</h4>
+              <textarea
+                name="receipeStep2"
+                id="receipeStep2"
+                placeholder="Écrivez ici la deuxième étape de votre préparation en détail."
+                required
+              ></textarea>
+            </div>
           </div>
           <div className="addStep3">
-            <h4>Dernière étape de préparation</h4>
-            <textarea
-              name="receipeStep3"
-              id="receipeStep3"
-              placeholder="Écrivez ici la dernière étape de votre préparation en détail."
-              required
-            ></textarea>
-            <img
-              src="public/img/receipe_etape03.svg"
-              alt="Post-it"
-              width={100}
-            />
+            <div>
+              <h4>Dernière étape de <br/>préparation</h4>
+              <textarea
+                name="receipeStep3"
+                id="receipeStep3"
+                placeholder="Écrivez ici la dernière étape de votre préparation en détail."
+                required
+              ></textarea>
+            </div>
           </div>
           <div className="addConfirm">
             <p>

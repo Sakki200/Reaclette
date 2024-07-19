@@ -104,9 +104,12 @@ export default function AllReceipe() {
                 <img src={receipe.img} alt={receipe.name} />
                 <h2>{receipe.name.toUpperCase().replace(/_/g, " ")}</h2>
                 <div>
-                  <p>{receipe.category}</p>
+                  <p>
+                    {receipe.category.charAt(0).toUpperCase() +
+                      receipe.category.slice(1)}
+                  </p>
                   <p>{receipe.time}</p>
-                  <p>{receipe.people}</p>
+                  <p>{receipe.people + "P"}</p>
                 </div>
 
                 <NavLink to={"/receipe/" + receipe.id}>
