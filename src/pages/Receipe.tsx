@@ -133,12 +133,14 @@ export default function Receipe() {
             <div className="productIngredients">
               <h3>INGRÉDIENTS</h3>
               <ul>
-                {receipe.ingredients.map((ingredient, index) => (
-                  <li key={index}>
-                    {ingredient.ingredient}{" "}
-                    {ingredient.quantity ? " : " + ingredient.quantity : ""}
-                  </li>
-                ))}
+                {receipe.ingredients.map((ingredient, index) =>
+                  ingredient.ingredient !== "" ? (
+                    <li key={index}>
+                      {ingredient.ingredient}{" "}
+                      {ingredient.quantity ? " : " + ingredient.quantity : ""}
+                    </li>
+                  ) : null
+                )}
               </ul>
             </div>
           </section>
